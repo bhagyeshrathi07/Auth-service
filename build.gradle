@@ -17,22 +17,24 @@ repositories {
 	mavenCentral()
 }
 
+ext {
+	log4jVersion = '2.24.1'
+}
+
 dependencies {
+	// Spring Boot starters
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	// SQLite and Hibernate dependencies
 	implementation 'org.xerial:sqlite-jdbc:3.41.2.2'
 	implementation 'org.hibernate.orm:hibernate-community-dialects'
-	// logging
-	implementation platform('org.apache.logging.log4j:log4j-bom:2.24.3')
-	implementation 'org.apache.logging.log4j:log4j-api:${log4j-api.version}'
-	implementation 'org.apache.logging.log4j:log4j-core:2.24.3'
-	implementation 'org.apache.logging.log4j:log4j-api:2.24.3'
 
+	// Test dependencies
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
-
 
 tasks.named('test') {
 	useJUnitPlatform()
