@@ -27,9 +27,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
-	// SQLite and Hibernate dependencies
-	implementation 'org.xerial:sqlite-jdbc:3.41.2.2'
-	implementation 'org.hibernate.orm:hibernate-community-dialects'
+
+	// PostgreSQL driver (runtime only)
+	runtimeOnly 'org.postgresql:postgresql'
 
 	// Test dependencies
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
